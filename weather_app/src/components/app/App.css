@@ -1,0 +1,12 @@
+.App {
+  text-align: center;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.App[data-theme="dark"] {
+  background-image: url("../../assets/bgDark.png");
+}
+.App[data-theme="light"] {
+  background-image: url("../../assets/bgLight.png");
+}

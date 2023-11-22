@@ -1,0 +1,81 @@
+:root {
+  --toggler-padding: 3px;
+  --toggler-border: 2px;
+  --ball-diameter: 14px;
+  --toggler-width: 47px;
+  /* light theme tokens */
+  --background-primary-light: 44, 191, 170;
+  --accent-light: 37, 89, 88;
+  --text-primary-light: 255, 255, 255;
+  --background-secondary-light: 126, 206, 237;
+
+  /* dark theme tokens */
+  --background-primary-dark: 25, 48, 66;
+  --accent-dark: 90, 182, 204;
+  --text-primary-dark: 105, 105, 105;
+  --background-secondary-dark: 15, 84, 128;
+}
+
+/* map tokens to proper theme */
+[data-theme="light"] {
+  --background-primary: var(--background-primary-light);
+  --accent: var(--accent-light);
+  --text: var(--text-primary-light);
+  --background-secondary: var(--background-secondary-light);
+}
+
+[data-theme="dark"] {
+  --background-primary: var(--background-primary-dark);
+  --accent: var(--accent-dark);
+  --text: var(--text-primary-dark);
+  --background-secondary: var(--background-secondary-dark);
+}
+
+.simpleToggler {
+  display: flex;
+  width: var(--toggler-width);
+  border-radius: var(--toggler-width);
+  padding: var(--toggler-padding);
+  background-color: rgba(var(--background-primary), 0.1);
+  border: var(--toggler-border) solid rgb(var(--accent));
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  position: relative;
+  cursor: pointer;
+  transition: backgroundColor 0.2s ease;
+}
+
+.ball {
+  position: relative;
+  z-index: 1;
+  width: var(--ball-diameter);
+  height: var(--ball-diameter);
+  background-color: rgb(var(--background-primary));
+  background-position: center;
+  background-size: cover;
+  border-radius: 50%;
+  transition:
+    transform 0.2s linear,
+    backgroundColor 0.2s ease;
+}
+
+.ball[data-theme="dark"] {
+  background-image: url("../../assets/moon2.png");
+}
+.ball[data-theme="light"] {
+  background-image: url("../../assets/sun.png");
+}
+
+html[data-theme="light"] .simpleToggler {
+  transform: translateX(0);
+}
+
+html[data-theme="dark"] .ball {
+  transform: translateX(
+    calc(
+      var(--toggler-width) - var(--ball-diameter) - 4 * var(--toggler-padding)
+    )
+  );
+}
