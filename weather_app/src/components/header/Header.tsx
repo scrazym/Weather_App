@@ -17,7 +17,7 @@ export const Header = () => {
       <Container className="header__container">
         <Logo />
         <Nav />
-        <Btn className="btn" text="Log In" />
+        <Btn path="/login" className="btn link__sideMenu" text="Log In" />
         <Switcher />
         <Hamburger />
       </Container>
