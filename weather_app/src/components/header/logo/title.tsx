@@ -1,9 +1,15 @@
-import styled from "styled-components";
+import { NavLink } from "react-router-dom";
 
-const LogoTextStyled = styled.h2`
-  color: rgb(var(--text));
-`;
+interface ILogo {
+  path: string;
+  text: string;
+  className: string;
+}
 
-export const LogoText = () => {
-  return <LogoTextStyled>Logo</LogoTextStyled>;
+export const LogoLink = ({ path, text, className }: ILogo) => {
+  return (
+    <NavLink to={path} className={className}>
+      {text}
+    </NavLink>
+  );
 };

@@ -3,7 +3,7 @@
 }
 .side-menu {
   position: relative;
-  height: 100vh;
+  height: calc(100vh - 70px);
   left: -100%;
   transition: all 0.5s;
   &__list {
@@ -15,7 +15,6 @@
   .side-menu {
     &_active {
       width: 100%;
-      height: 100vh;
       top: 0;
       left: 0;
       background-color: #0000005e;
@@ -25,7 +24,7 @@
       flex-direction: column;
       align-items: flex-start;
       width: 70%;
-      height: 100vh;
+      height: calc(100vh - 70px);
       padding: 10px 15px;
       gap: 10px;
     }
@@ -38,4 +37,7 @@
       color: rgb(15, 228, 228);
     }
   }
+}
+
+@media (max-width: 575px) {
 }

@@ -1,6 +1,6 @@
 import logo from "../../../assets/moto.jpg";
 
-import { LogoText } from "./title";
+import { LogoLink } from "./title";
 
 const Logo = () => {
   return (
@@ -8,7 +8,7 @@ const Logo = () => {
       <div className="header__logo-img">
         <img src={logo} alt="logo" />
       </div>
-      <LogoText />
+      <LogoLink text="LOGO" className="header__logo" path={"/dew"} />
     </div>
   );
 };
