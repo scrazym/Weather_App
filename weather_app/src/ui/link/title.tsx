@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
 
+import "./link.scss";
 interface ILogo {
   path: string;
   text: string;
