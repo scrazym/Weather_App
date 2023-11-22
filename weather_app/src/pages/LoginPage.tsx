@@ -1,5 +1,13 @@
+import SignupForm from "components/LoginForm/LoginForm";
+
+import "./loginPage.scss";
 const LoginPage = () => {
-  return <h1>Login page</h1>;
+  return (
+    <div className="login">
+      <h1 className="text">Login page</h1>
+      <SignupForm />
+    </div>
+  );
 };
 
 export default LoginPage;
