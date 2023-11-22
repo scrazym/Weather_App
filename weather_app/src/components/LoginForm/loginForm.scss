@@ -5,8 +5,14 @@
   justify-content: center;
   &__input {
     border-radius: 10px;
+    width: 250px;
     height: 40px;
     padding: 3px 10px;
+    border: 3px solid grey;
+    &:focus {
+      outline: none;
+      border-color: green;
+    }
   }
   label {
     color: rgb(var(--text));
