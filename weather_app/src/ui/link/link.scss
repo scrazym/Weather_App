@@ -4,6 +4,7 @@
   font-size: 14px;
   font-weight: 400;
   transition: all 0.4s ease-in;
+  padding: 0 5px;
   &__title {
     font-size: 22px;
     font-weight: 600;
@@ -17,5 +18,26 @@
     &:hover {
       text-shadow: rgb(0, 213, 255) 1px 0 10px;
     }
+  }
+  &__register {
+    font-size: 20px;
+    font-weight: 500;
+    animation: flicker 1.5s infinite;
+    &:hover {
+      animation: none;
+      text-shadow: rgb(255, 111, 0) 3px 4px 10px;
+    }
+  }
+}
+
+@keyframes flicker {
+  0% {
+    text-shadow: none;
+  }
+  50% {
+    text-shadow: rgb(0, 213, 255) 1px 0 10px;
+  }
+  100% {
+    text-shadow: none;
   }
 }
