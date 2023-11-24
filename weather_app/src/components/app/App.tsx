@@ -9,6 +9,7 @@ import "./App.scss";
 
 function App() {
   const { theme } = useTheme();
+
   return (
     <div className="App" data-theme={theme}>
       <Router>

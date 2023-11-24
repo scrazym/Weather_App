@@ -17,6 +17,13 @@ const Hamburger = () => {
       menu?.classList.toggle("side-menu_active");
       body?.classList.toggle("body_active");
     }
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && menu?.classList.contains("side-menu_active")) {
+        hamburger?.classList.remove("hamburger_active");
+        menu?.classList.remove("side-menu_active");
+        body?.classList.remove("body_active");
+      }
+    });
   };
   return (
     <>
