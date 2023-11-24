@@ -15,6 +15,7 @@ const RegistrationForm: React.FC<object> = () => {
           password: "",
           acceptedTerms: false,
           email: "",
+          confirmPassword: "",
         }}
         validationSchema={Yup.object({
           firstName: Yup.string()
@@ -25,6 +26,12 @@ const RegistrationForm: React.FC<object> = () => {
             .max(20, "Must be 20 characters or less")
             .required("Required"),
           password: Yup.string()
+            .matches(passwordRules, {
+              message: "Please create a stronger password",
+            })
+            .required("Required"),
+          confirmPassword: Yup.string()
+            .oneOf([Yup.ref("password")], "Password do not match")
             .matches(passwordRules, {
               message: "Please create a stronger password",
             })
@@ -70,14 +77,14 @@ const RegistrationForm: React.FC<object> = () => {
             label="Enter your password"
             name="password"
             type="password"
-            placeholder="fZ23Cds"
+            placeholder="*******"
             className="form__input"
           />
           <MyTextInput
             label="Confirm your password"
-            name="password"
+            name="confirmPassword"
             type="password"
-            placeholder="fZ23Cds"
+            placeholder="*******"
             className="form__input"
           />
 
