@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import { Form, Formik } from "formik";
 import MyCheckbox from "ui/input/checkbox/MyCheckBox";
 import MyTextInput from "ui/input/textInput/Input";
@@ -6,6 +7,8 @@ import * as Yup from "yup";
 import "./loginForm.scss";
 const passwordRules = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{5,}$/;
 const SignupForm: React.FC<object> = () => {
+  const navigate = useNavigate();
+
   return (
     <>
       <Formik
@@ -33,6 +36,7 @@ const SignupForm: React.FC<object> = () => {
         })}
         onSubmit={(values, { setSubmitting }) => {
           setTimeout(() => {
+            navigate(`/`, { replace: true });
             alert(JSON.stringify(values, null, 2));
             setSubmitting(false);
           }, 400);

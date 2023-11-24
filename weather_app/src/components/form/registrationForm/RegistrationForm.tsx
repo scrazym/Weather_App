@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import { Form, Formik } from "formik";
 import MyCheckbox from "ui/input/checkbox/MyCheckBox";
 import MyTextInput from "ui/input/textInput/Input";
@@ -6,6 +7,8 @@ import * as Yup from "yup";
 import "./registrationForm.scss";
 const passwordRules = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{5,}$/;
 const RegistrationForm: React.FC<object> = () => {
+  const navigate = useNavigate();
+
   return (
     <>
       <Formik
@@ -43,10 +46,21 @@ const RegistrationForm: React.FC<object> = () => {
             .email("Invalid email address")
             .required("Required"),
         })}
-        onSubmit={(values, { setSubmitting }) => {
+        onSubmit={(values, { setSubmitting, resetForm }) => {
           setTimeout(() => {
+            navigate(`/`, { replace: true });
             alert(JSON.stringify(values, null, 2));
             setSubmitting(false);
+            resetForm({
+              values: {
+                firstName: "",
+                lastName: "",
+                password: "",
+                acceptedTerms: false,
+                email: "",
+                confirmPassword: "",
+              },
+            });
           }, 400);
         }}
       >
@@ -92,7 +106,6 @@ const RegistrationForm: React.FC<object> = () => {
             text="I accept the terms and conditions"
             name="acceptedTerms"
           />
-
           <button className="btn" type="submit">
             Register
           </button>

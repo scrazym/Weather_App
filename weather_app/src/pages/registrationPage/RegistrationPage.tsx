@@ -9,9 +9,10 @@ const RegistrationPage = () => {
       <RegistrationForm />
       <span className="text">
         Already have an account?
-        <NavLink className="link link__register" to="/registration">
+        <NavLink className="link link__register" to="/login">
           Log In
-        </NavLink>{" "}
+        </NavLink>
+        s
       </span>
     </div>
   );
