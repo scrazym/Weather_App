@@ -9,3 +9,13 @@
     line-height: 1em;
   }
 }
+
+@media (max-width: 767px) {
+  .text {
+    font-size: 1em;
+    &__large {
+      font-size: 3em;
+      font-weight: 500;
+    }
+  }
+}

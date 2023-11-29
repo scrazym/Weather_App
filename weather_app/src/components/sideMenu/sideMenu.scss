@@ -8,7 +8,7 @@
   left: -100%;
   transition: all 0.5s ease-out;
   &__list {
-    background-color: rgba(var(--background-secondary), 0.5);
+    background-color: rgba(var(--background-secondary), 0.8);
   }
 }
 
@@ -18,7 +18,7 @@
       width: 100%;
       top: 80px;
       left: 0;
-      background-color: #0000005e;
+      background-color: #000000c2;
     }
     &__list {
       display: flex;

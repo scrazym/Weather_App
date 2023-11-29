@@ -1,14 +1,18 @@
 import { useAppSelector } from "hooks/reduxHooks";
 import Paragraph from "ui/text/TextParag";
 
+import Description from "./description/Descrription";
+import { WeatherIcon } from "./weatherIcon/WeatherIcon";
+
 const IconTemprDescr = () => {
   const data = useAppSelector((state) => state.weather);
   const { state } = data;
-  const { icon, current_t_C } = state;
+  const { current_t_C } = state;
   return (
     <div className="main__descr">
-      <img src={icon} />
-      <Paragraph className="text text__large">{current_t_C}</Paragraph>
+      <WeatherIcon />
+      <Paragraph className="text text__large">{`${current_t_C}\u00b0C`}</Paragraph>
+      <Description />
     </div>
   );
 };
