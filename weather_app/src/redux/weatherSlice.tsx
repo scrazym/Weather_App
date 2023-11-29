@@ -6,6 +6,7 @@ interface ITodayWeatherState {
   loading: boolean;
   error: null;
   state: FormatWeatherToday;
+  state2: [] | FormatWeatherToday;
 }
 const initialState: ITodayWeatherState = {
   loading: false,
@@ -22,6 +23,7 @@ const initialState: ITodayWeatherState = {
     loading: false,
     error: null,
   },
+  state2: [],
 };
 
 export const weatherSlice = createSlice({
@@ -30,6 +32,9 @@ export const weatherSlice = createSlice({
   reducers: {
     addCurrentWeather: (state, action: PayloadAction<FormatWeatherToday>) => {
       state.state = action.payload;
+    },
+    addWeather: (state, action: PayloadAction<FormatWeatherToday>) => {
+      state.state2 = action.payload;
     },
     changeCityName: (state) => {
       state.loading = false;
@@ -54,6 +59,7 @@ export const weatherSlice = createSlice({
   //   },
 });
 
-export const { changeCityName, addCurrentWeather } = weatherSlice.actions;
+export const { changeCityName, addCurrentWeather, addWeather } =
+  weatherSlice.actions;
 
 export default weatherSlice.reducer;
