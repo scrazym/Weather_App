@@ -11,9 +11,9 @@ export const fetchCurrentWeather = createAsyncThunk<void, void>(
         `/current.json?key=19166433a4ba41139d581519232711&q=Minsk&aqi=no`
       );
       //   const { info } = result;
-      console.log(result.info, "AXIOS");
+      console.log(result.data, "AXIOS");
 
-      dispatch(addWeather(transformDataToday(result.info)));
+      dispatch(addWeather(transformDataToday(result.data)));
     } catch (error) {
       return rejectWithValue(error);
     }

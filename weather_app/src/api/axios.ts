@@ -20,10 +20,10 @@ class Api {
   async put(url: string, params?: AxiosRequestConfig<string>) {
     return await axiosApiInstance.put(url, params);
   }
-  private handleResponse(response: AxiosResponse<void, void>) {
+  private handleResponse(response: AxiosResponse) {
     return {
       status: response.status,
-      info: response.data,
+      data: response.data,
       headers: response.headers,
     };
   }
@@ -35,6 +35,7 @@ class Api {
   }
 }
 export default new Api();
+
 export interface WetherFromApi {
   location: {
     name: string;
