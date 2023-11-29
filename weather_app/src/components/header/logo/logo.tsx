@@ -7,7 +7,7 @@ const Logo = () => {
       <div className="header__logo-img">
         <img src={logo} alt="logo" />
       </div>
-      <LogoLink text="LOGO" className="link link__title" path={"/*"} />
+      <LogoLink text="LOGO" className="link link__title " path={"/*"} />
     </div>
   );
 };
