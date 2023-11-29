@@ -1,5 +1,7 @@
 import ReactDOM from "react-dom/client";
+import { Provider } from "react-redux";
 import Theme from "context/theme";
+import { store } from "redux/store";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -11,7 +13,9 @@ const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 root.render(
-  <Theme>
-    <App />
-  </Theme>
+  <Provider store={store}>
+    <Theme>
+      <App />
+    </Theme>
+  </Provider>
 );

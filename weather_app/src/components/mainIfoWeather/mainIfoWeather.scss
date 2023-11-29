@@ -1,9 +1,15 @@
 .main {
   margin-top: 40px;
-  &__location {
+  &__title {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__location,
+  &__select {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    width: 50%;
   }
 }
 

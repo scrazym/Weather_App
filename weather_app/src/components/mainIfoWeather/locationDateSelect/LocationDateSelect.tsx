@@ -1,12 +1,22 @@
-import Clock from "components/clock/Clock";
-import Day from "components/day/Day";
+import Paragraph from "ui/text/TextParag";
+
+import Clock from "components/mainIfoWeather/locationDateSelect/clock/Clock";
+import Day from "components/mainIfoWeather/locationDateSelect/day/Day";
+
+import Location from "./location/Location";
 
 const LocationDateSelect = () => {
   return (
-    <div className="main__location">
-      <h2>Locatiion</h2>
-      <Day />
-      <Clock />
+    <div className="main__title">
+      <div className="main__location">
+        <Location />
+        <Paragraph className="text">Weather today</Paragraph>
+        <Day />
+        <Clock />
+      </div>
+      <div className="main__select">
+        <Paragraph className="text">Select</Paragraph>
+      </div>
     </div>
   );
 };

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Paragraph from "ui/text/TextMain";
+import Paragraph from "ui/text/TextParag";
 
 const Clock = () => {
   const [date, setDate] = useState(new Date());

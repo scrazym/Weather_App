@@ -1,4 +1,4 @@
-import Paragraph from "ui/text/TextMain";
+import Paragraph from "ui/text/TextParag";
 
 const day = () => {
   let day = new Date().getDay().toString();
