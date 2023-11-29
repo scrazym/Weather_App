@@ -15,7 +15,12 @@ const MyTextInput = (
   return (
     <>
       <label htmlFor={props.id || props.name}>{props.label}</label>
-      <input className={props.className} {...field} {...props} />
+      <input
+        autoComplete="true"
+        className={props.className}
+        {...field}
+        {...props}
+      />
       {meta.touched && meta.error ? (
         <div className="error">{meta.error}</div>
       ) : null}
