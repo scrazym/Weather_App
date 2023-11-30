@@ -13,7 +13,7 @@ const Card = ({ src, time, temp }: Card) => {
       <div className="main__descr-icon_svg main__descr-icon_svg_lg">
         <img className="img" src={src} alt="icon" />
       </div>
-      <Paragraph className="text">{temp}</Paragraph>{" "}
+      <Paragraph className="text">{`${temp}\u00b0C`}</Paragraph>{" "}
     </div>
   );
 };
