@@ -12,9 +12,13 @@
     padding: 10px;
   }
   &__card {
-    width: 180px;
-    height: 220px;
+    width: 120px;
+    height: 150px;
     border-radius: 15px;
     display: flex;
+    flex-shrink: 0;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
   }
 }

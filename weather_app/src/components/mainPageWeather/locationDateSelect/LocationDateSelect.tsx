@@ -1,7 +1,7 @@
 import Paragraph from "ui/text/TextParag";
 
-import Clock from "components/mainIfoWeather/locationDateSelect/clock/Clock";
-import Day from "components/mainIfoWeather/locationDateSelect/day/Day";
+import Clock from "components/mainPageWeather/locationDateSelect/clock/Clock";
+import Day from "components/mainPageWeather/locationDateSelect/day/Day";
 
 import Location from "./location/Location";
 

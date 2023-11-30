@@ -1,14 +1,20 @@
 import type { PayloadAction } from "@reduxjs/toolkit";
 import { createSlice } from "@reduxjs/toolkit";
-import { FormatWeatherToday } from "api/axios";
 
-import { fetchCurrentWeather } from "components/mainIfoWeather/getCurrentWeather";
+import {
+  fetchCurrentHoursWeather,
+  FormatWeatherHours,
+} from "components/mainPageWeather/getWeatherFromApi/getCurrentHoursForecast";
+import {
+  fetchCurrentWeather,
+  FormatWeatherToday,
+} from "components/mainPageWeather/getWeatherFromApi/getCurrentWeather";
 
 interface ITodayWeatherState {
   loading: boolean;
   error: null;
   currentWeather: FormatWeatherToday;
-  weatherWeek: [] | FormatWeatherToday;
+  CurrentHoursWeather: [] | Array<FormatWeatherHours>;
 }
 const initialState: ITodayWeatherState = {
   loading: false,
@@ -22,10 +28,8 @@ const initialState: ITodayWeatherState = {
     wind_kmH: 2,
     wind_dir: "string",
     pressure: 2,
-    loading: false,
-    error: null,
   },
-  weatherWeek: [],
+  CurrentHoursWeather: [],
 };
 
 export const weatherSlice = createSlice({
@@ -35,8 +39,11 @@ export const weatherSlice = createSlice({
     addCurrentWeather: (state, action: PayloadAction<FormatWeatherToday>) => {
       state.currentWeather = action.payload;
     },
-    addWeatherWeek: (state, action: PayloadAction<FormatWeatherToday>) => {
-      state.weatherWeek = action.payload;
+    addCurrentHoursWeather: (
+      state,
+      action: PayloadAction<Array<FormatWeatherHours>>
+    ) => {
+      state.CurrentHoursWeather = action.payload;
     },
     changeCityName: (state) => {
       state.loading = false;
@@ -57,11 +64,25 @@ export const weatherSlice = createSlice({
           state.loading = false;
           state.error = action.payload;
         }
+      )
+      .addCase(fetchCurrentHoursWeather.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(fetchCurrentHoursWeather.fulfilled, (state) => {
+        state.loading = false;
+      })
+      .addCase(
+        fetchCurrentHoursWeather.rejected,
+        (state: { loading: boolean; error: unknown }, action) => {
+          state.loading = false;
+          state.error = action.payload;
+        }
       );
   },
 });
 
-export const { changeCityName, addCurrentWeather, addWeatherWeek } =
+export const { changeCityName, addCurrentWeather, addCurrentHoursWeather } =
   weatherSlice.actions;
 
 export default weatherSlice.reducer;

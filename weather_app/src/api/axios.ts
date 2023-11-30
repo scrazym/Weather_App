@@ -77,30 +77,3 @@ export interface WetherFromApi {
     gust_kph: number;
   };
 }
-
-export interface FormatWeatherToday {
-  location: string;
-  icon: string;
-  current_t_C: number;
-  condition: string;
-  humidity: number;
-  wind_kmH: number;
-  wind_dir: string;
-  pressure: number;
-  loading: boolean;
-  error: null;
-}
-export const transformDataToday = (data: WetherFromApi): FormatWeatherToday => {
-  return {
-    location: data.location.tz_id,
-    icon: data.current.condition.icon,
-    current_t_C: data.current.temp_c,
-    condition: data.current.condition.text,
-    humidity: data.current.humidity,
-    wind_kmH: data.current.wind_kph,
-    wind_dir: data.current.wind_dir,
-    pressure: data.current.pressure_mb,
-    loading: false,
-    error: null,
-  };
-};
