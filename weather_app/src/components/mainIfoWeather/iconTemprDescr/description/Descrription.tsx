@@ -9,8 +9,8 @@ import IconDescr from "./iconText/IconText";
 
 const Description = () => {
   const data = useAppSelector((state) => state.weather);
-  const { state } = data;
-  const { condition, wind_kmH, wind_dir, humidity } = state;
+  const { currentWeather } = data;
+  const { condition, wind_kmH, wind_dir, humidity } = currentWeather;
   return (
     <div className="main__descr-block">
       <Paragraph className="text">{condition}</Paragraph>

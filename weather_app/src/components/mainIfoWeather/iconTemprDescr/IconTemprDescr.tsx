@@ -6,8 +6,8 @@ import { WeatherIcon } from "./weatherIcon/WeatherIcon";
 
 const IconTemprDescr = () => {
   const data = useAppSelector((state) => state.weather);
-  const { state } = data;
-  const { current_t_C } = state;
+  const { currentWeather } = data;
+  const { current_t_C } = currentWeather;
   return (
     <div className="main__descr">
       <WeatherIcon />

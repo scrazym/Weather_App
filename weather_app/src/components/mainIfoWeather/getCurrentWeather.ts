@@ -1,19 +1,18 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { addWeather } from "redux/weatherSlice";
+import { addCurrentWeather } from "redux/weatherSlice";
 
 import Api, { transformDataToday } from "../../api/axios";
 
-export const fetchCurrentWeather = createAsyncThunk<void, void>(
+export const fetchCurrentWeather = createAsyncThunk<void, string>(
   "weather/fetchCurrentWeather",
   async (location, { rejectWithValue, dispatch }) => {
     try {
       const result = await Api.getData(
-        `/current.json?key=19166433a4ba41139d581519232711&q=Minsk&aqi=no`
+        `/current.json?key=19166433a4ba41139d581519232711&q=${location}&aqi=no`
       );
-      //   const { info } = result;
-      console.log(result.data, "AXIOS");
-
-      dispatch(addWeather(transformDataToday(result.data)));
+      const { data } = result;
+      const transformData = transformDataToday(data);
+      dispatch(addCurrentWeather(transformData));
     } catch (error) {
       return rejectWithValue(error);
     }

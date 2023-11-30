@@ -2,16 +2,18 @@ import type { PayloadAction } from "@reduxjs/toolkit";
 import { createSlice } from "@reduxjs/toolkit";
 import { FormatWeatherToday } from "api/axios";
 
+import { fetchCurrentWeather } from "components/mainIfoWeather/getCurrentWeather";
+
 interface ITodayWeatherState {
   loading: boolean;
   error: null;
-  state: FormatWeatherToday;
-  state2: [] | FormatWeatherToday;
+  currentWeather: FormatWeatherToday;
+  weatherWeek: [] | FormatWeatherToday;
 }
 const initialState: ITodayWeatherState = {
   loading: false,
   error: null,
-  state: {
+  currentWeather: {
     location: "string",
     icon: "string",
     current_t_C: 2,
@@ -23,7 +25,7 @@ const initialState: ITodayWeatherState = {
     loading: false,
     error: null,
   },
-  state2: [],
+  weatherWeek: [],
 };
 
 export const weatherSlice = createSlice({
@@ -31,35 +33,35 @@ export const weatherSlice = createSlice({
   initialState,
   reducers: {
     addCurrentWeather: (state, action: PayloadAction<FormatWeatherToday>) => {
-      state.state = action.payload;
+      state.currentWeather = action.payload;
     },
-    addWeather: (state, action: PayloadAction<FormatWeatherToday>) => {
-      state.state2 = action.payload;
+    addWeatherWeek: (state, action: PayloadAction<FormatWeatherToday>) => {
+      state.weatherWeek = action.payload;
     },
     changeCityName: (state) => {
       state.loading = false;
     },
   },
-  //   extraReducers: (builder) => {
-  //     builder
-  //       .addCase(fetchWeatherToday.pending, (state) => {
-  //         state.loading = true;
-  //         state.error = null;
-  //       })
-  //       .addCase(fetchWeatherToday.fulfilled, (state) => {
-  //         state.loading = false;
-  //       })
-  //       .addCase(
-  //         fetchWeatherToday.rejected,
-  //         (state: { loading: boolean; error: unknown }, action) => {
-  //           state.loading = false;
-  //           state.error = action.payload;
-  //         }
-  //       );
-  //   },
+  extraReducers: (builder) => {
+    builder
+      .addCase(fetchCurrentWeather.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(fetchCurrentWeather.fulfilled, (state) => {
+        state.loading = false;
+      })
+      .addCase(
+        fetchCurrentWeather.rejected,
+        (state: { loading: boolean; error: unknown }, action) => {
+          state.loading = false;
+          state.error = action.payload;
+        }
+      );
+  },
 });
 
-export const { changeCityName, addCurrentWeather, addWeather } =
+export const { changeCityName, addCurrentWeather, addWeatherWeek } =
   weatherSlice.actions;
 
 export default weatherSlice.reducer;
