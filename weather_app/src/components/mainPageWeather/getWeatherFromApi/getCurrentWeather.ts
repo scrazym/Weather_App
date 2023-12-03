@@ -23,7 +23,7 @@ export const transformDataToday = (data: WetherFromApi): FormatWeatherToday => {
   return {
     location: data.location.tz_id,
     icon: data.current.condition.icon,
-    current_t_C: data.current.temp_c,
+    current_t_C: Math.round(data.current.temp_c),
     condition: data.current.condition.text,
     humidity: data.current.humidity,
     wind_kmH: data.current.wind_kph,

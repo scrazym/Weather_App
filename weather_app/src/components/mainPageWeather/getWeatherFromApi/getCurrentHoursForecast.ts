@@ -26,7 +26,7 @@ const transformHoursWeather = (data: Array<IHour>) => {
     return {
       time: item.time,
       icon: item.condition.icon,
-      temp_C: item.temp_c,
+      temp_C: Math.round(item.temp_c),
     };
   });
 };
