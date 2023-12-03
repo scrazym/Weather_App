@@ -7,7 +7,7 @@ interface ILogo {
   className: string;
 }
 
-export const LogoLink = ({ path, text, className }: ILogo) => {
+export const Link = ({ path, text, className }: ILogo) => {
   return (
     <NavLink to={path} className={className}>
       {text}

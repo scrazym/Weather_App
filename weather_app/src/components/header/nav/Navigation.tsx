@@ -1,25 +1,20 @@
+import { Link } from "ui/link/title";
+
 import "./navigation.scss";
 
-export const Nav = () => {
+const NavMenu = () => {
   return (
     <nav className="nav">
       <ul className="nav__list">
         <li className="nav__item">
-          <a href="" className="nav__link">
-            Link 1
-          </a>
+          <Link className="link" path="/" text="Weather Today" />
         </li>
         <li className="nav__item">
-          <a href="" className="nav__link">
-            Link 2
-          </a>
-        </li>
-        <li className="nav__item">
-          <a href="" className="nav__link">
-            Link 3
-          </a>
+          <Link className="link" path="/week" text="3 days forecast" />
         </li>
       </ul>
     </nav>
   );
 };
+
+export default NavMenu;

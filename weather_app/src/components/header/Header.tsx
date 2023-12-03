@@ -7,7 +7,7 @@ import Btn from "../../ui/button/Btn";
 
 import Hamburger from "./hamburger/Hamburger";
 import Logo from "./logo/logo";
-import { Nav } from "./nav/Navigation";
+import NavMenu from "./nav/Navigation";
 
 import "./header.scss";
 
@@ -16,7 +16,7 @@ export const Header = () => {
     <header className="header">
       <Container className="header__container">
         <Logo />
-        <Nav />
+        <NavMenu />
         <Btn path="/login" className="btn link__sideMenu" text="Log In" />
         <Switcher />
         <Hamburger />

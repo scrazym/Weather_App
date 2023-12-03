@@ -1,5 +1,5 @@
 import logo from "../../../assets/moto.jpg";
-import { LogoLink } from "../../../ui/link/title";
+import { Link } from "../../../ui/link/title";
 
 const Logo = () => {
   return (
@@ -7,7 +7,7 @@ const Logo = () => {
       <div className="header__logo-img">
         <img src={logo} alt="logo" />
       </div>
-      <LogoLink text="LOGO" className="link link__title " path={"/*"} />
+      <Link text="LOGO" className="link link__title " path={"/*"} />
     </div>
   );
 };

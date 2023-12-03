@@ -4,6 +4,7 @@ import LoginPage from "pages/loginPage/LoginPage";
 import { MainPage } from "pages/MainPage";
 import { PageNotFound } from "pages/Page404";
 import RegistrationPage from "pages/registrationPage/RegistrationPage";
+import WeeklyForecastPage from "pages/weeklyForecastPage/WeeklyForecastPage";
 
 import "./App.scss";
 
@@ -17,6 +18,7 @@ function App() {
           <Route path="/" element={<MainPage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/registration" element={<RegistrationPage />} />
+          <Route path="/week" element={<WeeklyForecastPage />} />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
       </Router>
