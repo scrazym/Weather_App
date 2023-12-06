@@ -8,3 +8,14 @@
   gap: 20px;
   overflow: scroll;
 }
+
+@media (max-width: 1920px) {
+  .slider {
+    width: 65%;
+  }
+}
+@media (max-width: 1240px) {
+  .slider {
+    width: 90%;
+  }
+}

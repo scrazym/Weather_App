@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "hooks/reduxHooks";
 
 import { Header } from "components/header/Header";
+import SideMenu from "components/sideMenu/SideMenu";
 import { fetchWeekWeather } from "components/weekPageWeather/getWeekWeather/getWeeklyForecast";
 
 const WeeklyForecastPage = () => {
@@ -15,6 +16,7 @@ const WeeklyForecastPage = () => {
   return (
     <section className="week">
       <Header />
+      <SideMenu />
     </section>
   );
 };
