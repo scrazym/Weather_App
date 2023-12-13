@@ -20,7 +20,7 @@ const initialState: ITodayWeatherState = {
   loading: false,
   error: null,
   currentWeather: {
-    location: "string",
+    location: "Minsk",
     icon: "string",
     current_t_C: 2,
     condition: "string",
@@ -45,8 +45,8 @@ export const weatherSlice = createSlice({
     ) => {
       state.CurrentHoursWeather = action.payload;
     },
-    changeCityName: (state) => {
-      state.loading = false;
+    changeCityName: (state, action: PayloadAction<string>) => {
+      state.currentWeather.location = action.payload;
     },
   },
   extraReducers: (builder) => {
