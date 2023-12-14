@@ -8,7 +8,7 @@ export const fetchSearchRes = createAsyncThunk<void, string>(
   async (location, { rejectWithValue, dispatch }) => {
     try {
       const result = await Api.getData(
-        `/search.json?key=19166433a4ba41139d581519232711&q=${location}`
+        `/search.json?key=08407554697d49a0be280722231910&q=${location}&aqi=no`
       );
       const { data } = result;
       const transformData = transformSearchRes(data);
@@ -20,10 +20,11 @@ export const fetchSearchRes = createAsyncThunk<void, string>(
   }
 );
 
-export const transformSearchRes = (info: ISearchRes[]): FormatSearchRes[] => {
+const transformSearchRes = (info: ISearchRes[]): FormatSearchRes[] => {
   return info.map((item) => {
     return {
-      value: item.region,
+      value: item.country,
+      name: item.name,
       label: `${item.name} / ${item.country}`,
     };
   });
@@ -41,5 +42,6 @@ export interface ISearchRes {
 
 export interface FormatSearchRes {
   value: string;
+  name: string;
   label: string;
 }

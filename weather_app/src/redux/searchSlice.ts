@@ -1,9 +1,13 @@
 import type { PayloadAction } from "@reduxjs/toolkit";
 import { createSlice } from "@reduxjs/toolkit";
 
-import { StateOption } from "components/mainPageWeather/locationDateSelect/select/data";
 import { fetchSearchRes } from "components/mainPageWeather/locationDateSelect/select/getSearchRes";
 
+export interface StateOption {
+  value: string;
+  name: string;
+  label: string;
+}
 interface ISearchState {
   loading: boolean;
   error: null;
@@ -12,7 +16,10 @@ interface ISearchState {
 const initialState: ISearchState = {
   loading: false,
   error: null,
-  searchResult: [],
+  searchResult: [
+    { value: "Russian", name: "Rome", label: "Rome" },
+    { value: "Russian", name: "Moscow", label: "Moscow" },
+  ],
 };
 
 export const searchSlice = createSlice({
