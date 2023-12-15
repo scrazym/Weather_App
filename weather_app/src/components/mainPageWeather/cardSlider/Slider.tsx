@@ -74,7 +74,12 @@ export const Responsive = () => {
   const items = CurrentHoursWeather.length
     ? CurrentHoursWeather.map((hour, i) => {
         return (
-          <Card key={i} src={hour.icon} time={hour.time} temp={hour.temp_C} />
+          <Card
+            key={i}
+            time={hour.time}
+            temp={hour.temp_C}
+            condition={hour.condition}
+          />
         );
       })
     : null;

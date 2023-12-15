@@ -4,7 +4,7 @@ import Clock from "components/mainPageWeather/locationDateSelect/clock/Clock";
 import Day from "components/mainPageWeather/locationDateSelect/day/Day";
 
 import Location from "./location/Location";
-import { Selectw } from "./select/Select";
+import { Select } from "./select/Select";
 
 const LocationDateSelect = () => {
   return (
@@ -17,7 +17,7 @@ const LocationDateSelect = () => {
       </div>
       <div className="main__select">
         <Paragraph className="text">Select</Paragraph>
-        <Selectw />
+        <Select />
       </div>
     </div>
   );

@@ -27,6 +27,7 @@ const transformHoursWeather = (data: Array<IHour>) => {
       time: item.time,
       icon: item.condition.icon,
       temp_C: Math.round(item.temp_c),
+      condition: item.condition.text,
     };
   });
 };
@@ -35,6 +36,7 @@ export interface FormatWeatherHours {
   time: string;
   icon: string;
   temp_C: number;
+  condition: string;
 }
 
 export interface IHour {

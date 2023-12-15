@@ -1,8 +1,8 @@
 import { useAppSelector } from "hooks/reduxHooks";
 import Paragraph from "ui/text/TextParag";
 
-import Wikness from "../../../../assets/wikness.svg";
-import Wind from "../../../../assets/Wind2.svg";
+import Wikness from "../../../../assets/humidity.svg";
+import Wind from "../../../../assets/wind.svg";
 import WindDir from "../../../../assets/windsock.svg";
 
 import IconDescr from "./iconText/IconText";

@@ -8,7 +8,7 @@ import { fetchSearchRes } from "./getSearchRes";
 
 import "./select.scss";
 
-export const Selectw = () => {
+export const Select = () => {
   const stateOptions = useAppSelector(
     (state) => state.searchResult.searchResult
   );
@@ -50,6 +50,7 @@ export const Selectw = () => {
         loadOptions={promiseOptions}
         onInputChange={handleKeyDown}
         onChange={changeCity}
+        placeholder="Search"
       />
     </div>
   );
