@@ -3,7 +3,7 @@ import Paragraph from "ui/text/TextParag";
 
 import Wikness from "../../../../assets/wikness.svg";
 import Wind from "../../../../assets/Wind2.svg";
-import WindDir from "../../../../assets/windDir.svg";
+import WindDir from "../../../../assets/windsock.svg";
 
 import IconDescr from "./iconText/IconText";
 

@@ -7,6 +7,7 @@
   height: calc(100vh - 70px);
   left: -100%;
   transition: all 0.5s ease-out;
+  z-index: 10;
   &__list {
     background-color: rgba(var(--background-secondary), 0.8);
   }
@@ -16,7 +17,7 @@
   .side-menu {
     &_active {
       width: 100%;
-      top: 80px;
+      top: 58px;
       left: 0;
       background-color: #000000c2;
     }
@@ -41,4 +42,12 @@
 }
 
 @media (max-width: 575px) {
+  .side-menu {
+    &_active {
+      width: 100%;
+      top: 70px;
+      left: 0;
+      background-color: #000000c2;
+    }
+  }
 }

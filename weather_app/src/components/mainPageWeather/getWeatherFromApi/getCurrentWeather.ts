@@ -25,6 +25,7 @@ export const transformDataToday = (data: WetherFromApi): FormatWeatherToday => {
   return {
     location: data.location.name,
     icon: data.current.condition.icon,
+    time: data.current.last_updated.slice(-5, -3),
     current_t_C: Math.round(data.current.temp_c),
     condition: data.current.condition.text,
     humidity: data.current.humidity,
@@ -37,6 +38,7 @@ export const transformDataToday = (data: WetherFromApi): FormatWeatherToday => {
 export interface FormatWeatherToday {
   location: string;
   icon: string;
+  time: string;
   current_t_C: number;
   condition: string;
   humidity: number;

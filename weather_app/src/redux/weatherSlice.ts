@@ -22,6 +22,7 @@ const initialState: ITodayWeatherState = {
   currentWeather: {
     location: "Minsk",
     icon: "string",
+    time: "string",
     current_t_C: 2,
     condition: "string",
     humidity: 2,

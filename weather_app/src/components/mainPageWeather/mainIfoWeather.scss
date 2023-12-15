@@ -14,6 +14,10 @@
       text-align: left;
     }
   }
+  &__icon {
+    display: flex;
+    align-items: center;
+  }
 
   &__descr {
     display: flex;
@@ -78,6 +82,12 @@
       &-icon {
         width: 100px;
       }
+    }
+    &__icon {
+      margin-top: 20px;
+      flex-direction: column-reverse;
+      justify-content: center;
+      align-items: center;
     }
   }
 }
