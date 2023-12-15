@@ -1,6 +1,5 @@
 import Paragraph from "ui/text/TextParag";
 
-import "./card.scss";
 interface Card {
   src: string;
   time: string;

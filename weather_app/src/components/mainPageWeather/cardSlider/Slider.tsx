@@ -1,6 +1,7 @@
 // import { Component } from "react";
 import Slider from "react-slick";
 import { useAppSelector } from "hooks/reduxHooks";
+import Paragraph from "ui/text/TextParag";
 
 import Card from "components/card/Card";
 import Spinner from "components/spinner/Spinner";
@@ -12,6 +13,7 @@ import "./slider.scss";
 
 export const Responsive = () => {
   const settings = {
+    height: "200px",
     className: "center",
     centerMode: true,
     infinite: true,
@@ -82,6 +84,8 @@ export const Responsive = () => {
   const cards = loading ? <Spinner /> : items;
   return (
     <div className="slider">
+      <Paragraph className="text">Hours weather</Paragraph>
+
       <Slider {...settings}>{cards}</Slider>
     </div>
   );
