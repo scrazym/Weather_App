@@ -31,6 +31,15 @@ export const Responsive = () => {
       {
         breakpoint: 1024,
         settings: {
+          slidesToShow: 5,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: false,
+        },
+      },
+      {
+        breakpoint: 875,
+        settings: {
           slidesToShow: 4,
           slidesToScroll: 1,
           infinite: true,
@@ -38,15 +47,22 @@ export const Responsive = () => {
         },
       },
       {
-        breakpoint: 600,
+        breakpoint: 680,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
-          initialSlide: 2,
+          initialSlide: 7,
         },
       },
       {
         breakpoint: 480,
+        settings: {
+          slidesToShow: 1.5,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 375,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
