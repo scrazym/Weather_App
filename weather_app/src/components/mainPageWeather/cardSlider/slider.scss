@@ -3,7 +3,10 @@
   margin: 0 auto;
   margin-top: 10px;
 }
-
+.slick-list {
+  height: 200px;
+  padding-left: 20px;
+}
 @media (max-width: 1920px) {
   .slider {
     width: 65%;
@@ -17,5 +20,9 @@
 @media (max-width: 575px) {
   .slider {
     width: 80%;
+  }
+  .slick-list {
+    height: 200px;
+    padding-left: 12px;
   }
 }

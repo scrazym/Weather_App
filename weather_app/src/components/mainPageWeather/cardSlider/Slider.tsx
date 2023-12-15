@@ -13,9 +13,7 @@ import "./slider.scss";
 
 export const Responsive = () => {
   const settings = {
-    height: "200px",
     className: "center",
-    centerMode: true,
     infinite: true,
     centerPadding: "60px",
     slidesToShow: 7,
@@ -25,7 +23,7 @@ export const Responsive = () => {
         breakpoint: 1400,
         settings: {
           slidesToShow: 5,
-          slidesToScroll: 1,
+          slidesToScroll: 5,
           infinite: true,
           dots: true,
         },
@@ -34,16 +32,16 @@ export const Responsive = () => {
         breakpoint: 1024,
         settings: {
           slidesToShow: 5,
-          slidesToScroll: 1,
+          slidesToScroll: 5,
           infinite: true,
-          dots: false,
+          dots: true,
         },
       },
       {
         breakpoint: 875,
         settings: {
           slidesToShow: 4,
-          slidesToScroll: 1,
+          slidesToScroll: 4,
           infinite: true,
           dots: false,
         },
@@ -51,22 +49,21 @@ export const Responsive = () => {
       {
         breakpoint: 680,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 4,
           slidesToScroll: 1,
-          initialSlide: 7,
+        },
+      },
+      {
+        breakpoint: 575,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
         },
       },
       {
         breakpoint: 480,
         settings: {
-          slidesToShow: 1.5,
-          slidesToScroll: 1,
-        },
-      },
-      {
-        breakpoint: 375,
-        settings: {
-          slidesToShow: 1,
+          slidesToShow: 2,
           slidesToScroll: 1,
         },
       },
