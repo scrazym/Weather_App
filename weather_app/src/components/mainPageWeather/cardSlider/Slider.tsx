@@ -12,12 +12,12 @@ import "./slider.scss";
 
 export const Responsive = () => {
   const settings = {
-    dots: true,
+    className: "center",
+    centerMode: true,
     infinite: true,
+    centerPadding: "60px",
+    slidesToShow: 3,
     speed: 500,
-    slidesToShow: 5,
-    slidesToScroll: 5,
-    initialSlide: 0,
     responsive: [
       {
         breakpoint: 1024,
