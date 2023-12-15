@@ -13,6 +13,8 @@ export const Selectw = () => {
     (state) => state.searchResult.searchResult
   );
   const filterCity = (inputValue: string) => {
+    console.log(inputValue, "Filter");
+
     return stateOptions.filter(
       (i) => i.label?.toLowerCase().includes(inputValue.toLowerCase())
     );
@@ -22,12 +24,12 @@ export const Selectw = () => {
     new Promise<StateOption[]>((resolve) => {
       setTimeout(() => {
         resolve(filterCity(inputValue));
-      }, 100);
+      }, 1000);
     });
   const dispatch = useAppDispatch();
-  const handleClick = (inputValue: string) => {
+  const handleKeyDown = (inputValue: string) => {
     console.log(inputValue);
-    if (inputValue.length > 1) {
+    if (inputValue.length) {
       console.log(inputValue);
 
       dispatch(fetchSearchRes(inputValue));
@@ -46,48 +48,9 @@ export const Selectw = () => {
         cacheOptions
         defaultOptions
         loadOptions={promiseOptions}
-        onInputChange={handleClick}
+        onInputChange={handleKeyDown}
         onChange={changeCity}
       />
     </div>
   );
 };
-
-// export const Reselect = () => {
-//   const dispatch = useAppDispatch();
-//   const options = useAppSelector((state) => state.searchResult.searchResult);
-//   console.log(options);
-//   const changeCity = (event: ChangeEvent<HTMLSelectElement>) => {
-//     const { value } = event.target;
-//     console.log(value, "Name");
-
-//     if (value) {
-//       dispatch(changeCityName(value));
-//     }
-//   };
-//   const handleClick = (event: KeyboardEvent<HTMLInputElement>) => {
-//     const { target } = event;
-//     const { value } = target;
-//     if (value) {
-//       dispatch(fetchSearchRes(value));
-//     }
-//   };
-//   const opt = options.map((item, i) => {
-//     return (
-//       <option key={i} value={item.value}>
-//         {item.name}
-//       </option>
-//     );
-//   });
-//   return (
-//     <div>
-//       <select onKeyDown={() => console.log("DOWN")} onChange={changeCity}>
-//         {opt}
-//       </select>
-//       <form>
-//         <input list="browsers" onKeyDown={handleClick} onChange={changeCity} />
-//         <datalist id="browsers">{opt}</datalist>
-//       </form>
-//     </div>
-//   );
-// };

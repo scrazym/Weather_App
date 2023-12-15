@@ -12,7 +12,7 @@ export const fetchSearchRes = createAsyncThunk<void, string>(
       );
       const { data } = result;
       const transformData = transformSearchRes(data);
-      console.log(transformData, "Transform");
+      console.log(result, "Transform");
       dispatch(addSerchResult(transformData));
     } catch (error) {
       return rejectWithValue(error);

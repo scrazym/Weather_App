@@ -1,5 +1,5 @@
 import { Header } from "components/header/Header";
-import Slider from "components/mainPageWeather/cardSlider/Slider";
+import { Responsive } from "components/mainPageWeather/cardSlider/Slider";
 import MainIfoWeather from "components/mainPageWeather/MainIfoWeather";
 import SideMenu from "components/sideMenu/SideMenu";
 
@@ -9,7 +9,9 @@ export const MainPage = () => {
       <Header />
       <SideMenu />
       <MainIfoWeather />
-      <Slider />
+      <Responsive />
+
+      {/* <Slider /> */}
     </>
   );
 };
