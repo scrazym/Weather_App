@@ -11,7 +11,6 @@ export const fetchCurrentWeather = createAsyncThunk<void, string>(
       const result = await Api.getData(
         `/current.json?key=19166433a4ba41139d581519232711&q=${location}&aqi=no`
       );
-      console.log("Fetch");
       const { data } = result;
       const transformData = transformDataToday(data);
       dispatch(addCurrentWeather(transformData));

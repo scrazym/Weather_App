@@ -4,7 +4,7 @@ import { addWeekWeather } from "redux/weekWeatherSlice";
 
 import Api from "../../../api/axios";
 
-export const fetchWeekWeather = createAsyncThunk<void, string>(
+export const fetchThreeDaysWeather = createAsyncThunk<void, string>(
   "weather/fetchCurrentWeather",
   async (location, { rejectWithValue, dispatch }) => {
     try {

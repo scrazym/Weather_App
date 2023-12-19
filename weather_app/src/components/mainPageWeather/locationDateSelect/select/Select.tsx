@@ -13,8 +13,6 @@ export const Select = () => {
     (state) => state.searchResult.searchResult
   );
   const filterCity = (inputValue: string) => {
-    console.log(inputValue, "Filter");
-
     return stateOptions.filter(
       (i) => i.label?.toLowerCase().includes(inputValue.toLowerCase())
     );

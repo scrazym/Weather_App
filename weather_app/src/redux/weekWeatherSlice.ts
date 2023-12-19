@@ -2,7 +2,7 @@ import type { PayloadAction } from "@reduxjs/toolkit";
 import { createSlice } from "@reduxjs/toolkit";
 import { Week } from "api/IWeekWeather";
 
-import { fetchWeekWeather } from "components/weekPageWeather/getWeekWeather/getWeeklyForecast";
+import { fetchThreeDaysWeather } from "components/weekPageWeather/getWeekWeather/getThreeDaysForecast";
 
 interface IWeekState {
   loading: boolean;
@@ -25,15 +25,15 @@ export const weatherWeekSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
-      .addCase(fetchWeekWeather.pending, (state) => {
+      .addCase(fetchThreeDaysWeather.pending, (state) => {
         state.loading = true;
         state.error = null;
       })
-      .addCase(fetchWeekWeather.fulfilled, (state) => {
+      .addCase(fetchThreeDaysWeather.fulfilled, (state) => {
         state.loading = false;
       })
       .addCase(
-        fetchWeekWeather.rejected,
+        fetchThreeDaysWeather.rejected,
         (state: { loading: boolean; error: unknown }, action) => {
           state.loading = false;
           state.error = action.payload;

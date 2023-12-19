@@ -3,15 +3,15 @@ import { useAppDispatch, useAppSelector } from "hooks/reduxHooks";
 
 import { Header } from "components/header/Header";
 import SideMenu from "components/sideMenu/SideMenu";
-import { fetchWeekWeather } from "components/weekPageWeather/getWeekWeather/getWeeklyForecast";
+import { fetchThreeDaysWeather } from "components/weekPageWeather/getWeekWeather/getThreeDaysForecast";
 
-const WeeklyForecastPage = () => {
+const ThreeDaysForecastPage = () => {
   const dispatch = useAppDispatch();
   const location = "Moscow";
   const state = useAppSelector((state) => state.weatherWeek);
   console.log(state);
   useEffect(() => {
-    dispatch(fetchWeekWeather(location));
+    dispatch(fetchThreeDaysWeather(location));
   }, [location]);
   return (
     <section className="week">
@@ -20,4 +20,4 @@ const WeeklyForecastPage = () => {
     </section>
   );
 };
-export default WeeklyForecastPage;
+export default ThreeDaysForecastPage;

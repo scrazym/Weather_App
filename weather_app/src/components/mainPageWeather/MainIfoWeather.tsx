@@ -13,7 +13,6 @@ const MainIfoWeather = () => {
   const location = useAppSelector(
     (state) => state.weather.currentWeather.location
   );
-  console.log(location);
   useEffect(() => {
     dispatch(fetchCurrentWeather(location));
     dispatch(fetchCurrentHoursWeather(location));
