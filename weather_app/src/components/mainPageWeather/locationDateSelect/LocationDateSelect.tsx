@@ -16,7 +16,7 @@ const LocationDateSelect = () => {
         <Clock />
       </div>
       <div className="main__select">
-        <Paragraph className="text">Select</Paragraph>
+        {/* <Paragraph className="text">Select</Paragraph> */}
         <Select />
       </div>
     </div>

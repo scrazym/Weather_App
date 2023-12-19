@@ -105,7 +105,7 @@ const IconWeather = ({ className, condition, time }: IIconWeatherProps) => {
           case "Fog":
             return fog;
           case "Freezing fog":
-            return fogNight;
+            return fogDay;
           case "Heavy freezing drizzle":
             return extremeDrizleDay;
           case "Light rain":
@@ -193,7 +193,7 @@ const IconWeather = ({ className, condition, time }: IIconWeatherProps) => {
           case "Fog":
             return fog;
           case "Freezing fog":
-            return fogDay;
+            return fogNight;
           case "Heavy freezing drizzle":
             return extremeDrizleNight;
           case "Light rain":
