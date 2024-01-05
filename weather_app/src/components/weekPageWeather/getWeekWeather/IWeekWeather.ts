@@ -1,6 +1,12 @@
-import { IAstroWeek, IForecastDay } from "./IForecastDay";
-import { IHourWeek } from "./IHourWeek";
-import { ICurrent, ILocation } from "./IWeather";
+import {
+  IAstroWeek,
+  IForecastDay,
+} from "../../mainPageWeather/getWeatherFromApi/IForecastDay";
+import { IHourWeek } from "../../mainPageWeather/getWeatherFromApi/IHourWeek";
+import {
+  ICurrent,
+  ILocation,
+} from "../../mainPageWeather/getWeatherFromApi/IWeather";
 
 export interface Week {
   location: ILocation;

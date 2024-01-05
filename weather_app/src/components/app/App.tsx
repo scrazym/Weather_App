@@ -4,7 +4,7 @@ import LoginPage from "pages/loginPage/LoginPage";
 import { MainPage } from "pages/MainPage";
 import { PageNotFound } from "pages/Page404";
 import RegistrationPage from "pages/registrationPage/RegistrationPage";
-import ThreeDaysForecastPage from "pages/weeklyForecastPage/WeeklyForecastPage";
+import ThreeDaysForecastPage from "pages/threeDaysForecastPage/ThreeDaysForecastPage";
 
 import "./App.scss";
 

@@ -1,6 +1,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { WetherFromApi } from "api/IWeather";
 import { addCurrentWeather } from "redux/weatherSlice";
+
+import { WetherFromApi } from "components/mainPageWeather/getWeatherFromApi/IWeather";
 
 import Api from "../../../api/axios";
 

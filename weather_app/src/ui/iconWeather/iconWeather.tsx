@@ -39,6 +39,7 @@ import heavyRainThundNight from "./assets/night/thunderstorms-night-extreme-rain
 import heavySnowThundNight from "./assets/night/thunderstorms-night-extreme-snow.svg";
 import lightRainThundNight from "./assets/night/thunderstorms-night-overcast-rain.svg";
 import lightSnowThundNight from "./assets/night/thunderstorms-night-snow.svg";
+import notFound from "./assets/noFound.svg";
 import lightRain from "./assets/rain.svg";
 import snowflake from "./assets/snowflake.svg";
 
@@ -140,7 +141,7 @@ const IconWeather = ({ className, condition, time }: IIconWeatherProps) => {
             return heavySnowThundDay;
 
           default:
-            return "../";
+            return notFound;
         }
       case "21":
       case "22":
@@ -154,6 +155,7 @@ const IconWeather = ({ className, condition, time }: IIconWeatherProps) => {
       case "06":
       case "07":
         switch (condition) {
+          case "Sunny":
           case "Clear":
             return clearNight;
           case "Partly cloudy":
@@ -228,7 +230,7 @@ const IconWeather = ({ className, condition, time }: IIconWeatherProps) => {
             return heavySnowThundNight;
 
           default:
-            return "../";
+            return notFound;
         }
     }
   };

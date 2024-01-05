@@ -1,8 +1,8 @@
 import type { PayloadAction } from "@reduxjs/toolkit";
 import { createSlice } from "@reduxjs/toolkit";
-import { Week } from "api/IWeekWeather";
 
 import { fetchThreeDaysWeather } from "components/weekPageWeather/getWeekWeather/getThreeDaysForecast";
+import { Week } from "components/weekPageWeather/getWeekWeather/IWeekWeather";
 
 interface IWeekState {
   loading: boolean;

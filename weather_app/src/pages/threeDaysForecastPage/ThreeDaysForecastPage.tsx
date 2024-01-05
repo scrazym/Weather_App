@@ -7,17 +7,18 @@ import { fetchThreeDaysWeather } from "components/weekPageWeather/getWeekWeather
 
 const ThreeDaysForecastPage = () => {
   const dispatch = useAppDispatch();
-  const location = "Moscow";
-  const state = useAppSelector((state) => state.weatherWeek);
-  console.log(state);
+  const state = useAppSelector((state) => state.weather);
+  const location = state.currentWeather.location;
+
   useEffect(() => {
     dispatch(fetchThreeDaysWeather(location));
   }, [location]);
   return (
-    <section className="week">
+    <>
       <Header />
       <SideMenu />
-    </section>
+      <section className="threeday"></section>
+    </>
   );
 };
 export default ThreeDaysForecastPage;

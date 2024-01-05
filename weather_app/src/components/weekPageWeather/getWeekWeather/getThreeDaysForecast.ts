@@ -1,8 +1,9 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { WetherFromApi } from "api/IWeather";
 import { addWeekWeather } from "redux/weekWeatherSlice";
 
 import Api from "../../../api/axios";
+
+import { Week } from "./IWeekWeather";
 
 export const fetchThreeDaysWeather = createAsyncThunk<void, string>(
   "weather/fetchCurrentWeather",
@@ -19,9 +20,9 @@ export const fetchThreeDaysWeather = createAsyncThunk<void, string>(
   }
 );
 
-export const transformDataWeek = (data: WetherFromApi): FormatWeatherToday => {
+export const transformDataWeek = (data: Week): FormatWeatherToday => {
   return {
-    location: data.location.tz_id,
+    location: data.forecast.forecastday[0].hour[0].condition.text,
     icon: data.current.condition.icon,
     current_t_C: Math.round(data.current.temp_c),
     condition: data.current.condition.text,
